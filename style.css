@@ -26,23 +26,21 @@ header {
 
 .game-area {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 100px);
+  gap: 2px;
 }
 
 .choice {
+  box-sizing: border-box;
+  color: #134e4a;
+  color: #134e4a;
+  background-color: #5eead4;
+  font-size: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  padding: 0;
-  background-color: #5eead4;
-  border: 0;
+  align-items: flex-end;
   cursor: pointer;
-  color: #134e4a;
-  color: #134e4a;
-  font-size: 100px;
 }
 
 .choice:hover {
@@ -51,4 +49,37 @@ header {
 
 .choice:active {
   background-color: #5eead4;
+}
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid #134e4a;
+  color: #134e4a;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.winning-message button:hover {
+  background-color: #134e4a;
+  color: white;
+}
+
+.winning-message.show {
+  display: flex;
 }
